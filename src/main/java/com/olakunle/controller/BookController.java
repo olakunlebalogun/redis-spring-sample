@@ -4,10 +4,9 @@ import com.olakunle.entity.Book;
 import com.olakunle.repository.BookProcess;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 @RestController
 @RequestMapping("/book/")
@@ -22,6 +21,12 @@ public class BookController {
     public ResponseEntity<String> addBook (@RequestBody Book book) {
         String result = bookProcess.addBookToHash(book);
         return ResponseEntity.ok(result);
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity getAllBookEntries() {
+        Map<String, Object> books = bookProcess.getAllBooks();
+        return ResponseEntity.ok().body(books);
     }
 
 

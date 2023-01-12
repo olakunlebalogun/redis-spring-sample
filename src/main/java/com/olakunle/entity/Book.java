@@ -18,6 +18,9 @@ import java.io.Serializable;
 @Data
 public class Book implements Serializable {
 
+
+    private static final long serialVersionUID = 6529685098267757690L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
