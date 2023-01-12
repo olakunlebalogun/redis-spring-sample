@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -23,9 +24,9 @@ public class BookController {
         return ResponseEntity.ok(result);
     }
 
-    @GetMapping("/all")
+    @GetMapping("all")
     public ResponseEntity getAllBookEntries() {
-        Map<String, Object> books = bookProcess.getAllBooks();
+        List<Book> books = bookProcess.getAllBooks();
         return ResponseEntity.ok().body(books);
     }
 

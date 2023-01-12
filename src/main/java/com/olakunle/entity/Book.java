@@ -19,11 +19,12 @@ import java.io.Serializable;
 public class Book implements Serializable {
 
 
-    private static final long serialVersionUID = 6529685098267757690L;
+//    private static final long serialVersionUID = 6529685098267757690L;
+    private static final long serialVersionUID = 955123080133623029L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
     private String name;
     private String author;
     private Double price;
