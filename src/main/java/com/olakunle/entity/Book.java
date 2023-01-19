@@ -14,13 +14,8 @@ import java.io.Serializable;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@RedisHash("Book")
 @Data
 public class Book implements Serializable {
-
-
-//    private static final long serialVersionUID = 6529685098267757690L;
-//    private static final long serialVersionUID = 955123080133623029L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
